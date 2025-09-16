@@ -1,0 +1,23 @@
+<div class="relative min-h-screen flex flex-col">
+  
+  @if(isLoading()) {
+    <div class="fixed top-0 left-0 right-0 h-1 bg-cyan-400 z-[9999] animate-pulse"></div>
+  }
+
+  <app-header></app-header>
+  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
+
+  <!-- Global UI Components -->
+  <app-modal 
+    [isOpen]="modalService.isOpen()" 
+    [title]="modalService.modalConfig().title" 
+    [message]="modalService.modalConfig().message"
+    (confirmed)="modalService.confirm()"
+    (cancelled)="modalService.cancel()">
+  </app-modal>
+
+  <app-toast-container [toasts]="toastService.toasts()"></app-toast-container>
+</div>

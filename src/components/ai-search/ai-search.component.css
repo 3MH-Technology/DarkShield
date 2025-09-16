@@ -1,0 +1,62 @@
+.prose-dark {
+    color: #c9d1d9;
+}
+.prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4, .prose-dark h5, .prose-dark h6 {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+.prose-dark p {
+    margin: 1em 0;
+    line-height: 1.7;
+}
+.prose-dark a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+.prose-dark a:hover {
+    text-decoration: underline;
+}
+.prose-dark strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+.prose-dark ul {
+    list-style-type: disc;
+    padding-left: 2em;
+    margin: 1em 0;
+}
+.prose-dark ol {
+    list-style-type: decimal;
+    padding-left: 2em;
+    margin: 1em 0;
+}
+.prose-dark li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.prose-dark blockquote {
+    border-left: 4px solid #30363d;
+    padding-left: 1em;
+    color: #8b949e;
+    font-style: italic;
+    margin: 1.5em 0;
+}
+.prose-dark code {
+    background-color: #161b22;
+    color: #c9d1d9;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+.prose-dark pre {
+    background-color: #161b22;
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+.prose-dark pre code {
+    background-color: transparent;
+    padding: 0;
+}

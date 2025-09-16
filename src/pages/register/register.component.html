@@ -1,0 +1,83 @@
+<div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md space-y-8 bg-gray-900/50 backdrop-blur-md p-10 rounded-lg border border-gray-700/50">
+    <div>
+      <div class="flex justify-center">
+        <svg class="h-14 w-14 text-cyan-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1L3 5V11C3 16.55 7.84 21.74 12 23C16.16 21.74 21 16.55 21 11V5L12 1ZM12 12H19C18.47 16.12 15.72 19.79 12 20.94V12H5V6.3L12 3.19V12Z" />
+        </svg>
+      </div>
+      <h2 class="mt-6 text-center text-3xl font-extrabold font-orbitron text-white">
+        Create Your Account
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-400">
+        Or
+        <a routerLink="/login" class="font-medium text-cyan-400 hover:text-cyan-300">
+          sign in to an existing account
+        </a>
+      </p>
+    </div>
+    <form class="mt-8 space-y-6" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="rounded-md shadow-sm -space-y-px">
+        <div>
+          <label for="name" class="sr-only">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required formControlName="name"
+                 class="form-input rounded-t-md"
+                 placeholder="Name">
+          @if (registerForm.controls.name.invalid && registerForm.controls.name.touched) {
+            <p class="form-error">Name is required.</p>
+          }
+        </div>
+        <div>
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" name="email" type="email" autocomplete="email" required formControlName="email"
+                 class="form-input"
+                 placeholder="Email address">
+          @if (registerForm.controls.email.invalid && registerForm.controls.email.touched) {
+            <p class="form-error">Please enter a valid email.</p>
+          }
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required formControlName="password"
+                 class="form-input"
+                 placeholder="Password">
+          @if (registerForm.controls.password.hasError('required') && registerForm.controls.password.touched) {
+            <p class="form-error">Password is required.</p>
+          }
+          @if (registerForm.controls.password.hasError('minlength') && registerForm.controls.password.touched) {
+            <p class="form-error">Password must be at least 6 characters long.</p>
+          }
+        </div>
+         <div>
+          <label for="confirm-password" class="sr-only">Confirm Password</label>
+          <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required formControlName="confirmPassword"
+                 class="form-input rounded-b-md"
+                 placeholder="Confirm Password">
+           @if (registerForm.hasError('passwordMismatch') && registerForm.controls.confirmPassword.touched) {
+            <p class="form-error">Passwords do not match.</p>
+          }
+        </div>
+      </div>
+
+      @if (errorMessage()) {
+        <div class="bg-red-900/30 border border-red-500/50 text-red-300 px-4 py-3 rounded-md text-sm">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      <div>
+        <button type="submit" [disabled]="isRegistering()"
+                class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed">
+          @if (isRegistering()) {
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          } @else {
+            <span>Register</span>
+          }
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

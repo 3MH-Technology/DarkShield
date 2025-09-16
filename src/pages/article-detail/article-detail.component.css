@@ -1,0 +1,75 @@
+/* Base styles for rendered markdown content */
+.prose-dark {
+    color: #c9d1d9;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+}
+.prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4, .prose-dark h5, .prose-dark h6 {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.prose-dark h2 {
+    font-size: 1.875rem; /* 30px */
+    border-bottom: 1px solid #30363d;
+    padding-bottom: .3em;
+}
+.prose-dark h3 {
+    font-size: 1.5rem; /* 24px */
+}
+.prose-dark p {
+    margin: 1.5em 0;
+}
+.prose-dark a {
+    color: #58a6ff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.prose-dark a:hover {
+    color: #80bfff;
+}
+.prose-dark strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+.prose-dark ul, .prose-dark ol {
+    padding-left: 2em;
+    margin: 1.5em 0;
+}
+.prose-dark li {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+.prose-dark li::marker {
+    color: #58a6ff;
+}
+.prose-dark blockquote {
+    border-left: 4px solid #58a6ff;
+    padding-left: 1.5em;
+    color: #8b949e;
+    font-style: italic;
+    margin: 2em 0;
+}
+.prose-dark code {
+    background-color: #161b22;
+    color: #c9d1d9;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+.prose-dark pre {
+    background-color: #010409;
+    border: 1px solid #30363d;
+    padding: 1.5em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2em 0;
+    line-height: 1.5;
+}
+.prose-dark pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 0.95em;
+}
